@@ -8,5 +8,3 @@ const credentials = new Pool({
   ssl: false
 });
 module.exports = credentials;
-
-
