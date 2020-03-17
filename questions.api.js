@@ -3,11 +3,11 @@ const questionsRoute = express.Router();
 const pool = require("./connection");
 
 questionsRoute.get("/questions", (req, res) => {
-    pool
-        .query("select * from questions order by random() limit 15")
-        .then(result => {
-            res.send(result.rows);
-        });
+  pool
+    .query("select * from questions order by random() limit 15")
+    .then(result => {
+      res.send(result.rows);
+    });
 });
 
-module.exports = {questionsRoute};
+module.exports = { questionsRoute };
