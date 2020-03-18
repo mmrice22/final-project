@@ -4,7 +4,7 @@ const pool = require("./connection");
 
 questionsRoute.get("/questions", (req, res) => {
   pool
-    .query("select * from questions order by random() limit 15")
+    .query("select * from questions order by random() limit 10")
     .then(result => {
       res.send(result.rows);
     });
