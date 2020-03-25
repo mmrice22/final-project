@@ -3,9 +3,11 @@ const scoreRoute = express.Router();
 const pool = require("./connection");
 
 scoreRoute.get("/scores", (req, res) => {
-  pool.query("select * from scores").then(result => {
-    res.send(result.rows);
-  });
+  pool
+    .query("select * from scores order by score desc limit 10")
+    .then(result => {
+      res.send(result.rows);
+    });
 });
 
 scoreRoute.post("/scores", (req, res) => {
